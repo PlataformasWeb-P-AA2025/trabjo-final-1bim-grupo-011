@@ -76,3 +76,10 @@ class Reaccion
 ## En caso de usar IA-Generativa para consulta de información
 
 - En un archivo llamado informacion.md; explicando a detalle el uso de cada prompt
+
+
+ 
+## Avances del proyecto
+-  Creación de las tablas en la base de datos 
+- Inserción  de los csv  con pandas a cada tabla correspondiente de la base de datos
+  
