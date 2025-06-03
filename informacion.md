@@ -29,3 +29,16 @@ Prompt:
 * Resultado:
 Validó que el diseño cumplía con las relaciones necesarias, la unicidad de reacciones, y el uso adecuado de claves foráneas.
 
+## 5. Generación de la consulta 5
+Prompt:
+"¿Ayudame generando esta consulta Listar todas las reacciones de tipo "alegre", "enojado", "pensativo" que sean de usuarios que cuyos nombre no inicien con vocal.?"
+
+* Resultado:
+A consulta generó una lista de reacciones de tipo "alegre", "enojado" y "pensativo", pero solo de usuarios cuyos nombres no inician con vocal. Por ejemplo:
+
+- alegre por Bryan
+- pensativo por Luis
+- enojado por Pedro
+- alegre por Marlon
+
+Esto demuestra que la consulta filtra correctamente tanto por el tipo de emoción como por la condición sobre el nombre del usuario.
