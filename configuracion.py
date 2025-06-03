@@ -5,5 +5,5 @@
 #cadena_base_datos = 'sqlite:///publicaciones.db' 
 
 # config.py
-cadena_base_datos = 'postgresql://postgres:oabenitez@localhost:5432/midb'
+cadena_base_datos = 'postgresql://postgres:oabenitez@localhost:5433/midb'
 

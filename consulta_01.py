@@ -11,7 +11,7 @@ nombre_usuario = "Shelley"
 # Consulta usando join para aprovechar el schema
 resultado = (
     session.query(Publicacion)
-    .join(Publicacion.usuario)
+    .join(Usuario)
     .filter(Usuario.nombre == nombre_usuario)
     .all()
 )
