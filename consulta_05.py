@@ -18,8 +18,7 @@ condiciones = and_(
 )
 
 # Consulta ajustada para SQLite
-reacciones = (
-    session.query(Reaccion)
+reacciones = (session.query(Reaccion)
     .join(Reaccion.usuario)
     .filter(
         Reaccion.tipo_emocion.in_(tipos_emocion),

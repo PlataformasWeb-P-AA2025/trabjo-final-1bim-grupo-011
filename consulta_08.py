@@ -1,21 +1,26 @@
-#Obtener el usuario con más publicaciones.
+# Obtener el usuario con más publicaciones.
 from sqlalchemy.orm import Session
-from sqlalchemy import func
-from genera_tablas import engine, Usuario, Publicacion, Reaccion
+from genera_tablas import engine, Usuario
 
 # Crear una sesión
 session = Session(engine)
 
-print("\n Usuario con más publicaciones:")
-usuario_mas_publicaciones = (
-    session.query(Usuario, func.count(Publicacion.id).label("num_publicaciones"))
-    .join(Usuario.publicaciones)
-    .group_by(Usuario.id)
-    .order_by(func.count(Publicacion.id).desc())
-    .first()
-)
+print("\nUsuario con más publicaciones:")
+
+# Obtener todos los usuarios como objetos
+usuarios = session.query(Usuario).all()
+
+# Buscar el usuario con más publicaciones
+usuario_mas_publicaciones = None
+max_publicaciones = -1
+
+for usuario in usuarios:
+    num_publicaciones = len(usuario.publicaciones)
+    if num_publicaciones > max_publicaciones:
+        max_publicaciones = num_publicaciones
+        usuario_mas_publicaciones = usuario
+
 if usuario_mas_publicaciones:
-    usuario, cantidad = usuario_mas_publicaciones
-    print(f"- {usuario.nombre} ({cantidad} publicaciones)")
+    print(f"- {usuario_mas_publicaciones.nombre} ({max_publicaciones} publicaciones)")
 
 session.close()
